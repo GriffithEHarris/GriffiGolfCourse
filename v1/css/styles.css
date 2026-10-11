@@ -520,7 +520,7 @@ html[data-contrast="high"] :focus-visible { outline-color: #0050ff; }
   position: relative;
   isolation: isolate;
   color: var(--white);
-  background: var(--green-900) url("../assets/landscape.svg") center 62% / cover no-repeat;
+  background: var(--green-900) url("../../assets/landscape.svg") center 62% / cover no-repeat;
 }
 .hero::before,
 .page-hero::before {
