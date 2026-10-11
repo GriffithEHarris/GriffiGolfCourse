@@ -51,6 +51,7 @@ Both versions share the illustrations in `assets/`, and the text-size and contra
 | `contact.html` | Phone directory board, address, hours, directions and map |
 | `accessibility.html` | Text size, contrast, pausing motion, phone help and printing |
 | `404.html` | "Lost ball" page for links that don't exist, with routes back to the main pages |
+| `book.html` | Preview of online tee-time booking with sample data. Not in the menus yet; see "Online booking (preview)" |
 
 Shared files:
 
@@ -79,6 +80,42 @@ Every push to the `claude/tender-hawking-28smna` branch publishes the site to Gi
 4. **Domain.** Add a `CNAME` file containing `thegriffgolf.org` (or `www.thegriffgolf.org`), and copy it into `_site` in the "Assemble" step. Set the same custom domain under Settings → Pages.
 5. **Town IT.** Point the domain's DNS at GitHub Pages: `A` records for the apex domain, or a `CNAME` record for `www` pointing to `paulanthony-alt.github.io`.
 6. **Old links.** Ask how long CivicPlus will keep the old site up. Visitors' bookmarks to old pages such as `/153/Fee-Schedule` will land on the "Lost ball" 404 page, which points them to the right place. If the town wants exact redirects, list the most-visited old URLs and add them.
+
+## Online booking (preview)
+
+`book.html` is a working preview of a modern tee-time booking flow in the site's style. It runs on **sample tee times**, takes no payment and books nothing. It is not linked from the menus, and every step says so. Demo member sign-in: household **1001** or **2002**, password **demo**.
+
+**The flow:** four steps, one decision at a time, with a running "Your round" scorecard and the starter's phone number at every step.
+1. **Visitor or member** (member sign-in), number of golfers (2–4), 9 or 18 holes, and the day.
+   - Visitors see 3 days ahead; signed-in members see 5.
+   - After the last tee time, the page starts on tomorrow.
+2. **Tee times** as tickets, showing open places and the price per golfer, filterable by morning, midday or afternoon.
+   - Nine-hole rounds before noon on weekends are shown as unavailable, with the reason.
+3. **Contact details, carts and payment:** pay at the course, or pay online through the booking company's secure card form. In the preview that form is only a labelled placeholder; there are no card fields.
+4. **Confirmation**, with "Add to my calendar" (an `.ics` file), print, and a reminder to call the starter for changes.
+
+**Files**
+- `js/booking-api.js`: the data layer. `DemoApi` makes the sample data. `RemoteApi` calls the real system through a proxy. The method shapes are documented at the top of the file.
+- `js/booking.js`: the screens. They only ever talk to the API object.
+- `css/booking.css`: the booking styles.
+
+**Sample assumptions** (the real system replaces these): "peak" means weekends, twilight starts at 3:00 p.m., and members' 9-hole rate is shown as "confirmed at check-in". Fees are the published 2026 rates.
+
+### Booking: connecting the real system
+
+1. **Get API access** from the booking company through the town's account: API documentation, test ("sandbox") credentials, and agreement to their terms.
+2. **Deploy a small proxy**, for example on Cloudflare Workers, Netlify Functions or the town's own servers. It keeps the API keys secret, translates requests into the company's API, and returns the shapes documented in `js/booking-api.js`:
+
+   | Method | Path | Purpose |
+   | --- | --- | --- |
+   | `GET` | `/rules` | Booking windows, player limits and how long a hold lasts |
+   | `POST` | `/session` | Member sign-in (household number and password are checked by the booking company) |
+   | `GET` | `/tee-times?date=&players=&holes=` | Available times and prices |
+   | `POST` | `/holds` | Hold a tee time while the golfer finishes |
+   | `POST` | `/bookings` | Confirm the booking |
+
+3. **Payments** use the booking company's own secure card form, built into step 3. Card numbers never pass through this site or the proxy.
+4. **Switch it on:** set `GriffBooking.config = { mode: "live", endpoint: "https://…/api/booking" }`. Then remove the preview notice and stamp from `book.html`, point the site's "Book a Tee Time" buttons at `book.html`, and test end to end against the sandbox before going live.
 
 ## Previewing locally
 
