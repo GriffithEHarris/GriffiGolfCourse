@@ -50,6 +50,7 @@ Both versions share the illustrations in `assets/`, and the text-size and contra
 | `clubhouse.html` | Restaurant and bar, Pro Shop, clubs and leagues |
 | `contact.html` | Phone directory board, address, hours, directions and map |
 | `accessibility.html` | Text size, contrast, pausing motion, phone help and printing |
+| `404.html` | "Lost ball" page for links that don't exist, with routes back to the main pages |
 
 Shared files:
 
@@ -57,6 +58,27 @@ Shared files:
 - `js/griff.js`: text size, contrast and motion controls; the sky and greeting; the menu button; scroll-in effects and counters; and the print buttons.
 - `assets/`: the logo (`favicon.svg`) and illustrations (`landscape.svg`, `hole.svg`, `tee.svg`, `flag.svg`, `patio.svg`).
 - `snippets/`: parked page sections that are not on the site right now (see below).
+
+## Launching
+
+### Stage 1: staging preview (current)
+
+Every push to the `claude/tender-hawking-28smna` branch publishes the site to GitHub Pages through `.github/workflows/pages.yml`:
+
+**https://paulanthony-alt.github.io/GriffithEHarris/**
+
+- **One-time setup** (repository admin): **Settings → Pages → Build and deployment → Source: GitHub Actions**. Then re-run the "Deploy site to GitHub Pages" workflow from the **Actions** tab.
+- **Hidden from search engines.** The staging copy marks every page `noindex`, so search engines won't list it as the course's website.
+- **What gets published:** the seven pages, `404.html`, `css/`, `js/`, `assets/` and the `v1/` archive. Nothing in `snippets/` or this README is published.
+
+### Stage 2: going live on thegriffgolf.org (after the town signs off)
+
+1. **Booking link.** Replace `RESERVE_URL` (the old site's `227/Reserve-a-Tee-Time` page, which disappears when the domain moves) with the booking system's direct address.
+2. **Content.** Clear the "Content to verify before launch" list below.
+3. **Turn off staging mode.** In `.github/workflows/pages.yml`, delete the "Mark as staging (noindex)" step.
+4. **Domain.** Add a `CNAME` file containing `thegriffgolf.org` (or `www.thegriffgolf.org`), and copy it into `_site` in the "Assemble" step. Set the same custom domain under Settings → Pages.
+5. **Town IT.** Point the domain's DNS at GitHub Pages: `A` records for the apex domain, or a `CNAME` record for `www` pointing to `paulanthony-alt.github.io`.
+6. **Old links.** Ask how long CivicPlus will keep the old site up. Visitors' bookmarks to old pages such as `/153/Fee-Schedule` will land on the "Lost ball" 404 page, which points them to the right place. If the town wants exact redirects, list the most-visited old URLs and add them.
 
 ## Previewing locally
 
