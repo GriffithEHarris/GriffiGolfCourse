@@ -29,6 +29,25 @@ This is a plain static site: HTML, one stylesheet and one small script. It has n
 - **Printing.** "Print" buttons on the rates and membership pages print just the price cards, under a letterhead with the course phone number.
 - **Help on every page.** An accessibility page explains the controls, and each page ends with a "call us for help" strip.
 
+## Version 2 concept (`v2/index.html`)
+
+V2 is a separate, more animated home page that tries a different look. V.1 is untouched; it is saved on the `V.1` branch. Open `v2/index.html` to see the concept. Its links go to the V.1 inner pages.
+
+**What's new in V2:**
+- **Live sky.** The hero sky follows the time of day in Greenwich: dawn, day, dusk, or night with stars. Clouds drift, the flag waves, a ball flies into the cup, and a greeting shows the local time ("Good morning, Greenwich. It's 7:42 a.m. on King Street"). Visitors can also change the sky with the Sky buttons. Add `?sky=dawn`, `day`, `dusk` or `night` to the address to preview each one.
+- **New shapes from the game instead of rounded cards:**
+  - a tournament leaderboard for today's conditions, with plates that flip in
+  - arched "clubhouse window" panels for the three ways to play
+  - printed scorecards (with perforated edges) for greens fees
+  - ticket stubs for carts and range buckets
+  - a rotating resident's seal for membership
+  - a ball rolling along the pace-of-play track
+  - pennant cards, and wavy fairway-edge dividers between sections
+- **Livelier type and colour.** Fraunces headings with Oswald for the leaderboard and scorecard lettering, and tournament-flag yellow with fairway green.
+- **Still easy to use.** V2 keeps the 20px Atkinson Hyperlegible body text, the text-size and high-contrast controls, and the fixed Call / Book bar on phones. It adds a **Pause motion** button, which stops every animation. Visitors whose device asks for reduced motion get a still page automatically.
+
+The whole concept, including its styles and script, lives in that one file. The leaderboard values are edited like the V.1 "Today" panel: look for the `EDIT DAILY` comment.
+
 ## Pages
 
 | File | Purpose |
