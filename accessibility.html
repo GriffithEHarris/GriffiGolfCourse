@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility | The Griff, Griffith E. Harris Golf Course</title>
+  <meta name="description" content="How to enlarge text, switch to high contrast and get help using The Griff golf course website.">
+  <meta name="theme-color" content="#0c3324">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Griff — Griffith E. Harris Golf Course">
+  <meta property="og:title" content="Accessibility | The Griff, Griffith E. Harris Golf Course">
+  <meta property="og:description" content="How to enlarge text, switch to high contrast and get help using The Griff golf course website.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("griff-text");if(t==="large"||t==="largest")document.documentElement.setAttribute("data-text",t);if(localStorage.getItem("griff-contrast")==="high")document.documentElement.setAttribute("data-contrast","high")}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="utility">
+    <div class="container">
+      <ul class="utility-info">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> 1323 King Street, Greenwich, CT</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Starter: <a href="tel:+12035318253">(203) 531-8253</a></li>
+      </ul>
+      <div class="a11y-tools">
+        <div class="a11y-group" role="group" aria-label="Text size">
+          <span class="a11y-label" aria-hidden="true">Text size</span>
+          <button class="a11y-btn" type="button" data-text-size="normal" aria-pressed="true" aria-label="Normal text size">A</button>
+          <button class="a11y-btn" type="button" data-text-size="large" aria-pressed="false" aria-label="Large text size">A+</button>
+          <button class="a11y-btn" type="button" data-text-size="largest" aria-pressed="false" aria-label="Largest text size">A++</button>
+        </div>
+        <button class="a11y-btn" type="button" data-contrast-toggle aria-pressed="false">High contrast</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="The Griff, Griffith E. Harris Golf Course — home page">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="31" fill="#0c3324" stroke="#c2a062" stroke-width="1.5"/>
+        <circle cx="32" cy="32" r="26.5" fill="none" stroke="#c2a062" stroke-width="0.75"/>
+        <path d="M6.6 40C18 34 28 40 36 38S50 36 57.4 40A26.5 26.5 0 0 1 6.6 40Z" fill="#2a6e50"/>
+        <line x1="32" y1="14" x2="32" y2="40" stroke="#fbf8f1" stroke-width="2" stroke-linecap="round"/>
+        <path d="M33 14.5 44 19l-11 4.5Z" fill="#c2a062"/>
+        <ellipse cx="32" cy="40.6" rx="3.6" ry="1.2" fill="#08241a"/>
+      </svg>
+        <span class="brand-text">
+          <span class="brand-name">The Griff</span>
+          <span class="brand-sub">Griffith E. Harris Golf Course &middot; Est. 1963</span>
+        </span>
+      </a>
+      <div class="masthead-actions">
+        <div class="masthead-call">
+          <span>Call the Starter</span>
+          <a href="tel:+12035318253">(203) 531-8253</a>
+        </div>
+        <a class="btn btn--gold" href="tee-times.html#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a Tee Time</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar" id="site-nav" aria-label="Main">
+    <div class="container">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">The Course</a></li>
+          <li><a href="tee-times.html">Tee Times &amp; Rates</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="clubhouse.html">Clubhouse &amp; Dining</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-book"><a class="btn btn--gold" href="tee-times.html#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a Tee Time</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <p class="print-letterhead"><strong>The Griff</strong> &middot; Griffith E. Harris Golf Course &middot; 1323 King Street, Greenwich, CT 06831 &middot; Starter (203) 531-8253</p>
+    <section class="page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><span aria-current="page">Accessibility</span></li>
+          </ol>
+        </nav>
+        <span class="eyebrow">Accessibility</span>
+        <h1>A website for every golfer</h1>
+        <p class="lead">We want this website to be easy for everyone to read and use. Here is how to make it work best for you.</p>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="card card--accent">
+          <span class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
+          <h3>Make the text bigger</h3>
+          <p>At the very top of every page, next to &ldquo;Text size&rdquo;, there are three buttons:</p>
+          <ul class="checklist">
+            <li><strong>A</strong> for normal text</li>
+            <li><strong>A+</strong> for large text</li>
+            <li><strong>A++</strong> for the largest text</li>
+          </ul>
+          <p>Try it now:</p>
+          <div class="btn-row">
+            <button class="btn btn--outline" type="button" data-text-size="normal" aria-pressed="true">Normal text</button>
+            <button class="btn btn--outline" type="button" data-text-size="large" aria-pressed="false">Large text</button>
+            <button class="btn btn--outline" type="button" data-text-size="largest" aria-pressed="false">Largest text</button>
+          </div>
+          <p class="mt-lg mb-0">Your choice is remembered on this device. You can also zoom any web page: hold <kbd>Ctrl</kbd> (or <kbd>&#8984; Command</kbd> on a Mac) and press <kbd>+</kbd>.</p>
+        </div>
+
+        <div class="card mt-lg">
+          <span class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v8M4.93 10.93l1.41 1.41M2 18h2M20 18h2M19.07 10.93l-1.41 1.41M22 22H2M8 6l4-4 4 4M16 18a4 4 0 0 0-8 0"/></svg></span>
+          <h3>Switch to high contrast</h3>
+          <p>The &ldquo;High contrast&rdquo; button at the top of the page changes the colors to black and white, which can be easier to read. Press it again to switch back.</p>
+          <div class="btn-row"><button class="btn btn--outline" type="button" data-contrast-toggle aria-pressed="false">Turn high contrast on or off</button></div>
+        </div>
+
+        <div class="card mt-lg">
+          <span class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <h3>Prefer the phone?</h3>
+          <p>Every phone number on this site can be tapped to call on a mobile phone. On a phone, &ldquo;Call Starter&rdquo; and &ldquo;Book Tee Time&rdquo; buttons stay at the bottom of the screen.</p>
+          <p class="mb-0">The starter can book tee times for you at <a href="tel:+12035318253">(203) 531-8253</a>.</p>
+        </div>
+
+        <div class="card mt-lg">
+          <span class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+          <h3>Print the rates</h3>
+          <p class="mb-0">The <a href="tee-times.html#rates">greens fees</a> and <a href="membership.html#fees">membership fees</a> have a print button that produces a clean, paper-friendly page.</p>
+        </div>
+
+        <div class="section-head section-head--spaced">
+          <span class="eyebrow">Our commitment</span>
+          <h2>Built to be accessible</h2>
+        </div>
+        <p>This website is designed to meet the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. It uses large, clear text, strong color contrast, large buttons, and it works with a keyboard and with screen readers.</p>
+        <p>If anything on this site is hard to use, please let us know so we can fix it.</p>
+        <div class="help-strip">
+          <p>Report a problem or ask for information in another format.</p>
+          <a class="btn btn--green" href="tel:+12035317200"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (203) 531-7200</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-crest">
+        <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="31" fill="#0c3324" stroke="#c2a062" stroke-width="1.5"/>
+        <circle cx="32" cy="32" r="26.5" fill="none" stroke="#c2a062" stroke-width="0.75"/>
+        <path d="M6.6 40C18 34 28 40 36 38S50 36 57.4 40A26.5 26.5 0 0 1 6.6 40Z" fill="#2a6e50"/>
+        <line x1="32" y1="14" x2="32" y2="40" stroke="#fbf8f1" stroke-width="2" stroke-linecap="round"/>
+        <path d="M33 14.5 44 19l-11 4.5Z" fill="#c2a062"/>
+        <ellipse cx="32" cy="40.6" rx="3.6" ry="1.2" fill="#08241a"/>
+      </svg>
+        <span class="brand-text">
+          <span class="brand-name">The Griff</span>
+          <span class="brand-sub">Griffith E. Harris Golf Course &middot; Est. 1963</span>
+        </span>
+      </a>
+        <p>The Town of Greenwich&rsquo;s public golf course. Eighteen holes by Robert Trent Jones Sr., open to residents and visitors since 1963.</p>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <h2>Visit</h2>
+          <address>
+            Griffith E. Harris Golf Course<br>
+            1323 King Street<br>
+            Greenwich, CT 06831
+          </address>
+          <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1323+King+Street+Greenwich+CT+06831" rel="noopener" target="_blank">Get driving directions<span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+        <div>
+          <h2>Call</h2>
+          <ul>
+            <li>Starter &amp; tee times<br><a href="tel:+12035318253">(203) 531-8253</a></li>
+            <li>Main office<br><a href="tel:+12035317200">(203) 531-7200</a></li>
+            <li>Golf Shop<br><a href="tel:+12035317261">(203) 531-7261</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Golf</h2>
+          <ul>
+            <li><a href="tee-times.html#book">Book a tee time</a></li>
+            <li><a href="tee-times.html#rates">Greens fees</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="course.html#rules">Course rules</a></li>
+            <li><a href="clubhouse.html">Clubhouse &amp; dining</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Help</h2>
+          <ul>
+            <li><a href="index.html#faq">Common questions</a></li>
+            <li><a href="accessibility.html">Accessibility &amp; text size</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="https://www.greenwichct.gov/" rel="noopener" target="_blank">Town of Greenwich<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Town of Greenwich, Connecticut. Owned and operated by the Town of Greenwich.</p>
+        <p><a href="#main">Back to top &uarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="action-bar" role="region" aria-label="Quick actions">
+    <a class="btn btn--outline" href="tel:+12035318253"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Starter</a>
+    <a class="btn btn--green" href="tee-times.html#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book Tee Time</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
