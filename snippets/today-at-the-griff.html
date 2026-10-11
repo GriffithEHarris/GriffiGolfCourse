@@ -1,0 +1,50 @@
+<!--
+  TODAY AT THE GRIFF — daily conditions leaderboard (removed from the home page for now)
+
+  What it is: a tournament-style board that shows the day's course status
+  (course open/closed, golf carts, driving range, starter's phone). The date in
+  its title fills in automatically; everything else is typed in by hand.
+
+  Why it's parked: the values must be updated every morning. A board that says
+  "OPEN" on a day the course is closed is worse than no board, so it stays off
+  the site until someone owns it (or it is connected to a data source).
+
+  To put it back:
+    1. Paste everything between the START and END markers into index.html,
+       directly after the closing </div> of the yellow "marquee" band
+       (right before the first wavy divider <svg class="wave" ...>).
+    2. Update the plate text. A value plate with class "ok" shows green
+       (good news); remove "ok" to show it red (e.g. CLOSED, FROST DELAY).
+    3. No CSS or JavaScript changes needed: the styles (.board, .plate) are
+       already in css/griff.css, and js/griff.js fills in #board-date and
+       runs the flip-in animation automatically.
+-->
+<!-- START -->
+    <!-- ========================================================= LEADERBOARD -->
+    <!-- EDIT DAILY: change plate text. Add class "ok" for green (good news), remove it for red. -->
+    <section class="section" aria-labelledby="board-title">
+      <div class="container board-wrap grid-min">
+        <div class="rise">
+          <span class="kicker">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 22V3M4 4c5-2 7 2 12 0v9c-5 2-7-2-12 0"/></svg>
+            Updated every morning
+          </span>
+          <h2 id="board-title">Check the board <em>before you drive over.</em></h2>
+          <p class="lead">Just like the leaderboard at a tournament, here is today&rsquo;s status at a glance. For anything else, the starter is a phone call away.</p>
+          <a class="btn btn--line" href="tel:+12035318253">Call the starter <span class="ball" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+        <div>
+          <div class="board flip" id="board">
+            <p class="board-title">Today at The Griff <span id="board-date">Greenwich, CT</span></p>
+            <dl>
+              <div class="row"><dt class="plate">Course</dt><dd class="plate val ok">Open</dd></div>
+              <div class="row"><dt class="plate">Golf carts</dt><dd class="plate val ok">Allowed <small>90&deg; rule</small></dd></div>
+              <div class="row"><dt class="plate">Driving range</dt><dd class="plate val ok">Open</dd></div>
+              <div class="row"><dt class="plate">Starter</dt><dd class="plate val ok"><a href="tel:+12035318253" style="color:inherit;text-decoration:none">531-8253</a></dd></div>
+            </dl>
+          </div>
+          <p class="board-note">Conditions can change with the weather. When in doubt, please call ahead.</p>
+        </div>
+      </div>
+    </section>
+<!-- END -->

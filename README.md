@@ -20,7 +20,7 @@ Both versions share the illustrations in `assets/`, and the text-size and contra
   - Clouds drift and the flag waves. On the home page, a ball flies along a dotted line into the cup.
   - The home page greets visitors with the local time: "Good morning, Greenwich. It's 7:42 a.m. on King Street."
   - Visitors can change the sky with the **Sky** buttons. Add `?sky=dawn`, `day`, `dusk` or `night` to any page address to preview each one.
-- **Tournament leaderboard.** White plates on a green board, used for "Today at The Griff", course hours and the phone directory.
+- **Tournament leaderboard.** White plates on a green board, used for course hours and the phone directory.
 - **Arched clubhouse windows** for the three ways to play.
 - **Printed scorecards** with perforated edges for greens fees and tee yardages, and **ticket stubs** for carts and range buckets.
 - **A rotating seal** for the membership price and the 36 walk-up spots.
@@ -43,7 +43,7 @@ Both versions share the illustrations in `assets/`, and the text-size and contra
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home: living-sky hero, course-facts ticker, Today leaderboard, three ways to play, the course, scorecards, membership seal, clubhouse, Pro Shop and clubs, FAQ |
+| `index.html` | Home: living-sky hero, course-facts ticker, three ways to play, the course, scorecards, membership seal, clubhouse, Pro Shop and clubs, FAQ |
 | `course.html` | History, tee scorecard, practice areas, hours board, course rules, pace of play |
 | `tee-times.html` | Ways to book, step-by-step online booking, walk-ups, 2026 greens fees, carts and range, good to know |
 | `membership.html` | Benefits, 2026 membership fees, who can join, how to apply, juniors |
@@ -56,6 +56,7 @@ Shared files:
 - `css/griff.css`: the design system. Colours, fonts and the time-of-day sky colours are CSS variables at the top of the file.
 - `js/griff.js`: text size, contrast and motion controls; the sky and greeting; the menu button; scroll-in effects and counters; and the print buttons.
 - `assets/`: the logo (`favicon.svg`) and illustrations (`landscape.svg`, `hole.svg`, `tee.svg`, `flag.svg`, `patio.svg`).
+- `snippets/`: parked page sections that are not on the site right now (see below).
 
 ## Previewing locally
 
@@ -66,11 +67,9 @@ python3 -m http.server 8000
 
 ## Day-to-day edits
 
-### "Today at The Griff" leaderboard (home page)
+### "Today at The Griff" leaderboard (parked)
 
-Find the `EDIT DAILY` comment in `index.html` and change the plate text, for example OPEN, CLOSED, FROST DELAY or CART PATHS ONLY. A plate with the class `ok` shows in green; remove `ok` to show it in red. The date in the board's title fills in automatically.
-
-> **Keep this board current, or remove it if no one can update it daily.** A stale "OPEN" is worse than none.
+The daily-conditions board (course open, carts, range) has been taken off the home page until someone can keep it updated every morning; a stale "OPEN" is worse than none. Its markup is saved in `snippets/today-at-the-griff.html`, with instructions at the top of that file for putting it back. Its styles and script are still in place, so restoring it is a single paste.
 
 ### Rates
 
@@ -97,7 +96,7 @@ The live thegriffgolf.org could not be loaded directly while this was built, so 
 
 - [ ] **Tee yardages, ratings and slopes** (`course.html#tees`). Public sources disagree. The Blue tees are listed anywhere from 6,357 to 6,512 yards, and the site uses 6,512. The Green tee rating and slope are marked "W" because they appear to be women's ratings.
 - [ ] **Hours** (`course.html#hours`, `contact.html`). These are from the 2021 opening notice.
-- [ ] **"Today at The Griff" values**, and who will update them each day.
+- [ ] **"Today at The Griff" board** (parked in `snippets/`): decide whether someone will update it daily, or connect it to a data source, before bringing it back.
 - [ ] **Online booking URL**, and whether online membership renewal is offered.
 - [ ] **Cancellation and same-day policies.** The wording is general because the official details weren't available.
 - [ ] **Phone directory** (`contact.html`), especially the Operations line.
