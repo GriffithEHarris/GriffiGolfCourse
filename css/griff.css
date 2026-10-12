@@ -237,7 +237,7 @@ html[data-motion="paused"] .rise, .no-motion .rise { opacity: 1 !important; tran
 }
 .menu-btn svg { width: 22px; height: 22px; }
 @media (max-width: 1380px) { .brand small { display: none; } }
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   .menu-btn { display: inline-flex; }
   .nav { position: absolute; top: 100%; left: 0; right: 0; display: none; background: var(--cream); border-bottom: 3px solid var(--flag); box-shadow: 0 20px 40px rgba(7,38,25,.15); }
   .nav-open .nav { display: block; }
@@ -830,3 +830,74 @@ kbd { display: inline-block; padding: 1px 8px; border: 2px solid var(--pine); bo
 .board.directory .row { grid-template-columns: minmax(0, 1fr) auto; }
 .board .plate.tel a { white-space: nowrap; }
 @media (max-width: 560px) { .board.directory .row { grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------------- added: news, policies, outings, search */
+.nav .nav-search a:not(.btn) { display: inline-flex; align-items: center; gap: 8px; }
+.nav .nav-search svg { flex: none; width: 22px; min-width: 22px; max-width: none; height: 22px; }
+@media (min-width: 1201px) {
+  .nav-search .nav-search-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .nav-search a { padding-inline: 10px !important; }
+}
+.f-social { margin-top: 18px !important; }
+.f-social a { display: inline-flex; align-items: center; gap: 10px; overflow-wrap: anywhere; }
+.f-social svg { flex: none; width: 20px; height: 20px; }
+
+.pennant-card .call, .staff-card .call { display: flex; width: fit-content; max-width: 100%; overflow-wrap: anywhere; }
+.pennant-card .call + .call, .staff-card .call + .call { margin-top: 10px; }
+.pennant-card .call svg, .staff-card .call svg { flex: none; }
+
+.contact-links { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
+.contact-links a { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: var(--pine); overflow-wrap: anywhere; }
+.contact-links svg { flex: none; width: 22px; height: 22px; color: var(--fairway); }
+
+.btn--on-pine { --btn-ink: #fff; --ball: var(--flag); --ball-ink: var(--pine); border-color: #fff; color: #fff; }
+
+/* Staff directory */
+.staff-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 1100px) { .staff-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .staff-grid { grid-template-columns: 1fr; } }
+.staff-card { padding: 26px 24px; background: var(--paper); border-top: 6px solid var(--fairway); }
+.staff-card:nth-child(2) { border-top-color: var(--clay, #c8553d); }
+.staff-card:nth-child(3) { border-top-color: var(--flag); }
+.staff-card:nth-child(4) { border-top-color: #2b5fb3; }
+.staff-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.staff-card p { color: var(--ink-soft); }
+
+/* Forms & documents */
+.doc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; max-width: 860px; }
+.doc-link { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 18px 22px; background: var(--paper); border-left: 6px solid var(--fairway); color: var(--ink); text-decoration: none; transition: transform .2s, background .2s; }
+.doc-link:hover { background: var(--mint); transform: translateX(4px); }
+.doc-link svg { width: 30px; height: 30px; color: var(--fairway); }
+.doc-link b { display: block; font-size: 1.1875rem; color: var(--pine-deep); }
+.doc-link small { display: block; color: var(--ink-soft); font-size: 1rem; }
+.doc-kind { font-family: var(--font-board); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--pine); background: var(--flag); padding: 4px 10px; }
+@media (max-width: 520px) { .doc-link { grid-template-columns: auto minmax(0, 1fr); } .doc-kind { grid-column: 2; justify-self: start; } }
+
+/* News */
+.news-wrap { max-width: 860px; }
+.post { padding: 28px 0 30px; border-top: 2px solid var(--line); }
+.post time { display: inline-block; margin-bottom: 8px; font-family: var(--font-board); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--fairway); }
+.post h3 { margin-bottom: 12px; }
+.post p { max-width: 64ch; }
+.pennant-card.event .kicker { color: var(--fairway); }
+
+/* Search */
+.search-wrap { max-width: 860px; }
+.search-label { display: block; margin-bottom: 10px; font-weight: 700; font-size: 1.25rem; color: var(--pine-deep); }
+.search-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.search-row input { flex: 1 1 260px; min-width: 0; min-height: 60px; padding: 0 18px; font: inherit; font-size: 1.25rem; color: var(--ink); background: #fff; border: 3px solid var(--pine); border-radius: 0; }
+.search-row input:focus { outline: 4px solid var(--flag); outline-offset: 2px; }
+.search-row .btn svg { width: 20px; height: 20px; }
+.search-status { margin: 22px 0 8px; font-weight: 700; color: var(--ink-soft); }
+.search-results { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 12px; }
+.search-results a { display: block; padding: 18px 22px; background: var(--paper); border-left: 6px solid var(--flag); color: var(--ink); text-decoration: none; }
+.search-results a:hover, .search-results a:focus-visible { background: var(--mint); }
+.search-results .r-page { display: block; font-family: var(--font-board); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: .9375rem; color: var(--fairway); }
+.search-results b { display: block; margin: 2px 0 6px; font-family: var(--font-display); font-size: 1.375rem; color: var(--pine-deep); }
+.search-results .r-text { display: block; color: var(--ink-soft); }
+.search-results mark { background: #fff1a8; color: inherit; padding: 0 2px; }
+.search-quick h2 { font-size: 1.5rem; }
+.quick-links { list-style: none; margin: 0 0 32px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.quick-links a { display: inline-block; padding: 10px 16px; border: 2px solid var(--pine); color: var(--pine); font-weight: 700; text-decoration: none; }
+.quick-links a:hover { background: var(--mint); }
+@media print { .search-form, .nav-search { display: none !important; } }

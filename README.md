@@ -47,8 +47,12 @@ Both versions share the illustrations in `assets/`, and the text-size and contra
 | `course.html` | History, tee scorecard, practice areas, hours board, course rules, pace of play |
 | `tee-times.html` | Ways to book, step-by-step online booking, walk-ups, 2026 greens fees, carts and range, good to know |
 | `membership.html` | Benefits, 2026 membership fees, who can join, how to apply, juniors |
-| `clubhouse.html` | Restaurant and bar, Pro Shop, clubs and leagues |
-| `contact.html` | Phone directory board, address, hours, directions and map |
+| `clubhouse.html` | Restaurant and bar, Pro Shop with online lesson booking, men's and women's clubs, handicaps |
+| `news.html` | News & Events: the season's tournaments and closings, course news posts, email sign-up |
+| `outings.html` | Host an outing: the shotgun package, what's included, how to book |
+| `policies.html` | Cancellations and no-shows, rain checks, frost delays, forms and documents |
+| `search.html` | Site search (uses `js/search-index.js`, rebuilt with the pages) |
+| `contact.html` | Phone directory board, staff directory, email and Instagram, address, hours, directions and map |
 | `accessibility.html` | Text size, contrast, pausing motion, phone help and printing |
 | `404.html` | "Lost ball" page for links that don't exist, with routes back to the main pages |
 | `book.html` | Preview of online tee-time booking with sample data. Not in the menus yet; see "Online booking (preview)" |
@@ -70,7 +74,7 @@ Every push to the `claude/tender-hawking-28smna` branch publishes the site to Gi
 
 - **One-time setup** (repository admin): **Settings → Pages → Build and deployment → Source: GitHub Actions**. Then re-run the "Deploy site to GitHub Pages" workflow from the **Actions** tab.
 - **Hidden from search engines.** The staging copy marks every page `noindex`, so search engines won't list it as the course's website.
-- **What gets published:** the seven pages, `404.html`, `css/`, `js/`, `assets/` and the `v1/` archive. Nothing in `snippets/` or this README is published.
+- **What gets published:** the main pages, `404.html`, `css/`, `js/`, `assets/` and the `v1/` archive. Nothing in `snippets/` or this README is published.
 
 ### Stage 2: going live on thegriffgolf.org (after the town signs off)
 
@@ -139,7 +143,9 @@ The daily-conditions board (course open, carts, range) has been taken off the ho
 ### Other edits
 
 - **Online booking link:** "Reserve online" points to the current reservation page. Search the HTML files for `227/Reserve-a-Tee-Time` and replace it with the booking provider's direct link.
-- **Header, navigation and footer** appear on every page. When you change one, update all seven files.
+- **Header, navigation and footer** appear on every page. When you change one, update every page.
+- **Course news:** add a post at the top of the "Course news" section in `news.html` (a date, a headline and a few short paragraphs). Keep closings and aeration dates current.
+- **Search:** `js/search-index.js` lists the text of every page. Rebuild it whenever page text changes, or search results will show old wording.
 
 ## Swapping in real photography
 
@@ -157,8 +163,15 @@ The live thegriffgolf.org could not be loaded directly while this was built, so 
 - [ ] **Hours** (`course.html#hours`, `contact.html`). These are from the 2021 opening notice.
 - [ ] **"Today at The Griff" board** (parked in `snippets/`): decide whether someone will update it daily, or connect it to a data source, before bringing it back.
 - [ ] **Online booking URL**, and whether online membership renewal is offered.
-- [ ] **Cancellation and same-day policies.** The wording is general because the official details weren't available.
+- [ ] **Cancellation, rain check and frost delay rules** (`policies.html`). They come from the old site's policy pages. The rain check for an 18-hole round stopped between holes 3 and 9 isn't stated anywhere, so the page tells golfers to ask the starter.
+- [ ] **Outing package** (`outings.html`): $88 per player, 12:30–1:00 p.m. shotgun, 80-player minimum, and the outing director's direct line (the old site lists (203) 531-6176; the page uses the main office for now).
+- [ ] **Staff directory** (`contact.html#staff`): names and roles come from the old site and the Pro Shop's site.
+- [ ] **Email sign-up** (`news.html#signup`) points to the Town's "Notify Me" list on the old site. Give the new site its own sign-up before the domain moves.
+- [ ] **Links that live on the old site** and will break when the domain moves: the membership application and advance reservation policy PDFs, the newsletter archive and the "Notify Me" sign-up. Copy the PDFs into this repository before launch.
+- [ ] **Handicaps** (`clubhouse.html#handicap`): confirm whether town membership itself includes a GHIN number or only club membership.
+- [ ] **Events** (`news.html#events`): this year's dates for the town tournament, Swing Fore Hope and aeration.
 - [ ] **Phone directory** (`contact.html`), especially the Operations line.
 - [ ] **Pro Shop and restaurant links:** griffgolfshop.com and the Clubhouse at the Griff Facebook page.
-- [ ] **Men's club (GHMGC) contact**, plus any women's, senior or junior leagues to list.
+- [ ] **Men's club (GHMGC) contact** and the women's clubs' details (BWGA, Greenwich Women's Golf Club), plus any senior or junior leagues to list.
+- [ ] **Pro Shop email and Instagram** (`info.griffgolfshop@gmail.com`, `@golfshopatthegriff`) and the Clubhouse Instagram (`@clubhouse_at_the_griff`).
 - [ ] **Adult membership age range** (shown as 22–64, inferred from the Young Adult and Senior brackets).
